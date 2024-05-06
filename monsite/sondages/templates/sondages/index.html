@@ -1,0 +1,9 @@
+<!-- Updated template without the |type filter -->
+<!-- Add these lines to display the values -->
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'sondages/style.css' %}">
+{% for question in latest_question_list %}
+
+    <li><a href="{% url 'sondages:detail' question.id %}">{{ question.question_text }}</a></li>
+{% endfor %}
